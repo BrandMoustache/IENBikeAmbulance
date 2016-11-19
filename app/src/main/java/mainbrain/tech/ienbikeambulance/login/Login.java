@@ -11,9 +11,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
@@ -31,6 +35,9 @@ import java.util.Random;
 
 import mainbrain.tech.ienbikeambulance.R;
 import mainbrain.tech.ienbikeambulance.design.Sansation;
+
+import static mainbrain.tech.ienbikeambulance.R.layout.login;
+
 /**
  * Created by iammike on 16/07/16.
  */
@@ -39,17 +46,21 @@ public class Login extends AppCompatActivity
     EditText number;
     private String code;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         getActionBar().hide();
-        setContentView(R.layout.login);
+        setContentView(login);
         //Log.e("start","hi");
 
         number = EditText.class.cast(findViewById(R.id.editText));
         number.toString();
-        number.setTextIsSelectable(true);
+        if(number.isFocused()) {
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        }
+        //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         //??? this line toplayout has height accordin to layout parameters?
         //getResources().getDisplayMetrics().heightPixels this value give you the height of the deveice

@@ -24,6 +24,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ import mainbrain.tech.ienbikeambulance.main.Home;
 public class CheckOTP extends Activity
 {
     private CustomProgressDialog progressDialog;
-    TextView txtv1,txtv2,txtv3,txtv4,txtv5;
+    TextView txtv1,txtv2,txtv3,txtv4,txtv5,changenum;
     EditText edt_txtotp;
     private static final String LETTER_SPACING = "  ";
     private String myPreviousText;
@@ -62,9 +63,11 @@ public class CheckOTP extends Activity
         txtv3=(TextView)findViewById(R.id.txtv_line3);
         txtv4=(TextView)findViewById(R.id.txtv_line4);
         txtv5=(TextView)findViewById(R.id.txtv_line5);
+        changenum=(TextView)findViewById(R.id.textView6);
         edt_txtotp=(EditText)findViewById(R.id.edttxt_otp);
         ll_id=(LinearLayout)findViewById(R.id.ll_id);
         intent = getIntent();
+        changenum.setText("Not " + getIntent().getStringExtra("number") + "?");
 
         //leave this. will come to it later
         edt_txtotp.addTextChangedListener(new TextWatcher() {
