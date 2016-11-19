@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2b2263</color>
+    <color name="colorPrimaryDark">#80000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorwhite">#ffffff</color>
+    <color name="textColorWhite">#ffffff</color>
+    <color name="buttonOrange">#df2b2a</color>
+    <color name="primaryText">#212121</color>
+    <color name="textcolor">#4d4d4d</color>
+    <color name="hintcolor">#b1b1a7</color>
+
+    <color name="background_tab_pressed">#FFF9C4</color>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="REASON FOR REJECTION"
+                android:id="@+id/textView6"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:layout_centerInParent="true"
+                android:textColor="#212121" />
+        </RelativeLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textSize="10pt"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:text="SEND"
+            android:id="@+id/button2"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button_blue"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+</LinearLayout>

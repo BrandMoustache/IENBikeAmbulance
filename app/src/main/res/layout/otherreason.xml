@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="REASON FOR REJECTION"
+            android:id="@+id/textView7"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#212121" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Other Reason"
+                android:id="@+id/textView8"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:textColor="#212121" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText"
+                android:layout_gravity="center_horizontal"
+                android:minHeight="100dp"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@null"
+                android:layout_margin="10dp"
+                android:inputType="textMultiLine|textCapSentences"
+                android:background="@drawable/rounded_textfield_gray"
+                android:padding="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="SEND"
+        android:textSize="10pt"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:id="@+id/button3"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_button_blue"
+        android:textColor="#ffffff" />
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">IenBikeAmbulance</string>
+    <!--<string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCrrDBseI3PiESGECpeerPTVBzB2rtN-Oc</string>-->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCrrDBseI3PiESGECpeerPTVBzB2rtN-Oc</string>
+    <string name="no_geocoder_available">No geocoder available</string>
+
+    <string name="fetch_address">Fetch address</string>
+
+    <string name="address_found">Address found</string>
+
+    <string name="no_address_found">Sorry, no address found</string>
+    <string name="no_location_data_provided">No location data provided</string>
+    <string name="service_not_available">Sorry, the service is not available</string>
+    <string name="invalid_lat_long_used">Invalid latitude or longitude used</string>
+    <string name="male">Male</string>
+    <string name="contact_details">Contact Details</string>
+
+    <!--checkotp activity Strings-->
+    <string name="Otpvalidation">Please Enter OTP</string>
+    <string name="Otpnull">Otp is null</string>
+
+</resources>

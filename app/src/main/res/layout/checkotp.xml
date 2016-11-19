@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_transperent"
+            android:layout_weight="1"
+            android:layout_margin="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Enter OTP send to your phone"
+            android:id="@+id/textView7"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/textcolor" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <EditText
+                android:id="@+id/edttxt_otp"
+                android:layout_width="120dp"
+                android:textColor="@color/textcolor"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:paddingLeft="15dp"
+                android:maxLength="13"
+                android:textCursorDrawable="@null"
+                android:backgroundTint="?attr/colorPrimary"
+                android:ems="10"
+                android:layout_alignBottom="@+id/ll_id"/>
+
+            <LinearLayout
+                android:id="@+id/ll_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtv_line1"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/textcolor"
+                        android:layout_height="wrap_content"
+                        android:textSize="30dp"
+                        android:layout_marginBottom="5dp"
+                        android:visibility="visible"
+                        android:text="-"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtv_line2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/textcolor"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="30dp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtv_line3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/textcolor"
+                        android:layout_marginBottom="5dp"
+                        android:visibility="visible"
+                        android:textSize="30dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtv_line4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/textcolor"
+                        android:layout_marginBottom="5dp"
+                        android:visibility="visible"
+                        android:textSize="30dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtv_line5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/textcolor"
+                        android:layout_marginBottom="5dp"
+                        android:visibility="visible"
+                        android:textSize="30dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/button3"
+            android:background="@drawable/rounded_button_blue"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/textColorWhite"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Resend OTP"
+            android:id="@+id/textView8"
+            android:textColor="@color/textcolor"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Not +91 9443153157?"
+            android:id="@+id/textView6"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Number"
+            android:id="@+id/button2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_button_blue"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorwhite"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "mainbrain.tech.ienbikeambulance"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    compile 'me.zhanghai.android.materialprogressbar:library:1.1.7'
+    compile 'com.google.android.gms:play-services-location:9.6.1'
+    compile 'com.google.android.gms:play-services-maps:9.6.1'
+    compile 'com.google.android.gms:play-services-places:9.6.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.akexorcist:googledirectionlibrary:1.0.4'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/jxmpp-core-0.4.2-beta1.jar')
+    compile files('libs/jxmpp-util-cache-0.4.2-beta1.jar')
+    compile files('libs/org.apache.http.legacy.jar')
+    compile files('libs/smack-android-4.1.7.jar')
+    compile files('libs/smack-core-4.1.7.jar')
+    compile files('libs/smack-debug-4.1.7.jar')
+    compile files('libs/smack-extensions-4.1.7.jar')
+    compile files('libs/smack-legacy-4.1.7.jar')
+    compile files('libs/smack-sasl-provided-4.1.7.jar')
+    compile files('libs/smack-tcp-4.1.7.jar')
+    compile files('libs/universal-image-loader-1.9.4.jar')
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+}

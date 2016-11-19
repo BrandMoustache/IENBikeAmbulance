@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    android:background="@color/colorwhite">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toplayout">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_transperent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_margin="20dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="+91"
+                android:id="@+id/textView3"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/colorwhite" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorPrimary"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/editText"
+                android:imeOptions="actionDone"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="2dp"
+                android:gravity="center"
+                android:textCursorDrawable="@null"
+                android:cursorVisible="true"
+                android:textColor="@color/textcolor"
+                android:inputType="number"
+                android:textColorHint="#a4a3a3"
+                android:layout_gravity="center"
+                android:background="#ffffff"
+                android:layout_weight="1"
+                android:hint="type your number here"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:gravity="bottom">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/rounded_button_blue"
+            android:textColor="@color/textColorWhite"
+            android:elevation="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="An OTP will send to your mobile"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/textcolor"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="false"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp" />
+    </LinearLayout>
+
+</LinearLayout>

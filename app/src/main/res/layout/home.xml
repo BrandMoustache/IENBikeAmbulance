@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.Home">
+
+    <mainbrain.tech.ienbikeambulance.track.MapWrapperLayout
+        android:id="@+id/map_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/location_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+
+    </mainbrain.tech.ienbikeambulance.track.MapWrapperLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Go Online"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:id="@+id/button10"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:textColor="#ffffff"
+        android:background="#b2b2b2"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/rectangle_button_white">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_map_white_24dp"
+            android:id="@+id/map"
+            android:layout_weight="1"
+            android:background="@drawable/mapcolor"
+            android:padding="5dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_satellite_white_24dp"
+            android:id="@+id/satellite"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:tint="@color/textcolor" />
+    </LinearLayout>
+
+
+</RelativeLayout>

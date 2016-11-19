@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:id="@+id/layout">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="EMERGENCY AREA"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Getting user's address..."
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#212121"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/circle"
+                    android:layout_centerInParent="true" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="60"
+                        android:id="@+id/textView4"
+                        android:textSize="70dp"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="SECONDS"
+                        android:id="@+id/textView5"
+                        android:textColor="#ffffff"
+                        android:lines="1"
+                        android:gravity="center" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Click here to accept"
+                android:id="@+id/textView3"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#4990e2" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Reject"
+            android:textAllCaps="true"
+            android:textSize="12pt"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rectangle_button_grey"
+            android:layout_margin="10dp"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+</LinearLayout>
