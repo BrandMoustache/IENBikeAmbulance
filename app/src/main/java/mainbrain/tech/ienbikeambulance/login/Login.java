@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        getActionBar().hide();
+        getSupportActionBar().hide();
         setContentView(login);
         //Log.e("start","hi");
 

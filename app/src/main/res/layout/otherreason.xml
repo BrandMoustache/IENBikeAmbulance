@@ -47,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText"
                 android:layout_gravity="center_horizontal"
+                android:textColor="#212121"
                 android:minHeight="100dp"
                 android:cursorVisible="true"
                 android:textCursorDrawable="@null"

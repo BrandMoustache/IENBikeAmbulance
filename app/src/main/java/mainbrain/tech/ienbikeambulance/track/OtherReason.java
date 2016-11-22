@@ -35,8 +35,9 @@ public class OtherReason extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.otherreason);
-        getActionBar().hide();
+
 
         new Sansation().overrideFonts(getApplicationContext() , findViewById(R.id.layout));
 

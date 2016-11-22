@@ -92,7 +92,7 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Servi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-        getActionBar().hide();
+        getSupportActionBar().hide();
 
         if (!MySmackService.isRunning()) {
             Log.e("Home","callingsmack");
@@ -465,7 +465,7 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Servi
             try
             {
                 HttpClient http_client = new DefaultHttpClient();
-                HttpPost http_post = new HttpPost(Cons.port+"services/updateFireLocation");
+                HttpPost http_post = new HttpPost(Cons.port+"services/updateBikeLocation");
 //                HttpPost http_post = new HttpPost("http://139.59.24.15/ien/updateLocation.php");
                 List<NameValuePair> nameVP = new ArrayList<NameValuePair>(2);
                 nameVP.add(new BasicNameValuePair("id" , params[0]));
@@ -516,7 +516,7 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Servi
             try
             {
                 HttpClient http_client = new DefaultHttpClient();
-                HttpPost http_post = new HttpPost(Cons.port+"services/changeFireStatus");
+                HttpPost http_post = new HttpPost(Cons.port+"services/changeBikeStatus");
                 List<NameValuePair> nameVP = new ArrayList<NameValuePair>(2);
                 nameVP.add(new BasicNameValuePair("id" , params[0]));
                 nameVP.add(new BasicNameValuePair("status" , params[1]));

@@ -69,6 +69,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -144,8 +145,9 @@ public class Track extends AppCompatActivity implements OnMapReadyCallback,
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.track);
-        getActionBar().hide();
+
 
         //it has the id imageView5
         //so you found the button in the design
@@ -388,12 +390,12 @@ public class Track extends AppCompatActivity implements OnMapReadyCallback,
     public void onMapReady(GoogleMap googleMap)
     {
         mMap = googleMap;
-        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setZoomControlsEnabled(false);
         userLocation = new LatLng(getIntent().getDoubleExtra("latitude", 0.0), getIntent().getDoubleExtra("longitude", 0.0));
         mMap.addMarker(new MarkerOptions().position(userLocation));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,16));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,12));
         mMap.animateCamera(CameraUpdateFactory.zoomIn());
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(16), 2000, null);
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(12), 2000, null);
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
     }
 
@@ -534,8 +536,39 @@ public class Track extends AppCompatActivity implements OnMapReadyCallback,
         }
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
 
-        if(getPermission())
+        if (getPermission())
             updateLocation();
+        double distance = CalculationByDistance(mLastLocation,userLocation);
+        if(distance < 500)
+        {
+            Log.e("distance","yes");
+        }
+        //float distance = mLastLocation.distanceTo(userLocation.latitude,userLocation.longitude) / 1000;
+
+    }
+    public double CalculationByDistance(Location StartP, LatLng EndP) {
+        int Radius = 6371;// radius of earth in Km
+        double lat1 = StartP.getLatitude();
+        double lat2 = EndP.latitude;
+        double lon1 = StartP.getLongitude();
+        double lon2 = EndP.longitude;
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLon = Math.toRadians(lon2 - lon1);
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
+                + Math.cos(Math.toRadians(lat1))
+                * Math.cos(Math.toRadians(lat2)) * Math.sin(dLon / 2)
+                * Math.sin(dLon / 2);
+        double c = 2 * Math.asin(Math.sqrt(a));
+        double valueResult = Radius * c;
+        double km = valueResult / 1;
+        DecimalFormat newFormat = new DecimalFormat("####");
+        int kmInDec = Integer.valueOf(newFormat.format(km));
+        double meter = valueResult % 1000;
+        int meterInDec = Integer.valueOf(newFormat.format(meter));
+        Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
+                + " Meter   " + meterInDec);
+
+        return Radius * c;
     }
 
     @Override
@@ -738,7 +771,7 @@ public class Track extends AppCompatActivity implements OnMapReadyCallback,
 
             try {
                 HttpClient http_client = new DefaultHttpClient();
-                HttpPost http_post = new HttpPost(Cons.port+"services/updateFireLocation");
+                HttpPost http_post = new HttpPost(Cons.port+"services/updateBikeLocation");
 //                HttpPost http_post = new HttpPost("http://139.59.24.15/ien/updateLocation.php");
                 List<NameValuePair> nameVP = new ArrayList<NameValuePair>(2);
                 nameVP.add(new BasicNameValuePair("id" , params[0]));
@@ -1017,7 +1050,7 @@ public class Track extends AppCompatActivity implements OnMapReadyCallback,
         protected String doInBackground(String... params) {
             try {
                 HttpClient http_client = new DefaultHttpClient();
-                HttpPost http_post = new HttpPost(Cons.port + "services/getnearestambulance");
+                HttpPost http_post = new HttpPost(Cons.port + "services/getnearestbike");
                 List<NameValuePair> nameVP = new ArrayList<NameValuePair>(2);
                 //i am passing lat and lon to server
                 nameVP.add(new BasicNameValuePair("latitude", params[0]));

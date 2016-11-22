@@ -19,7 +19,8 @@ public class LandingPage extends AppCompatActivity
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.landingpage);
-        getActionBar().hide();
+        getSupportActionBar().hide();
+
 
         //return to Login.class page if the user not logged in
 

@@ -9,11 +9,12 @@
 
     <Button
         android:id="@+id/end"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="END"
-        android:visibility="gone"
-        android:background="#000000"
+        android:text="send request to another ambulance"
+        android:textAllCaps="true"
+        android:visibility="visible"
+        android:background="@drawable/rounded_button_black1"
         android:textColor="#ffffff"
         android:layout_margin="5dp"
         android:layout_alignParentRight="true"
@@ -178,7 +179,7 @@
         android:layout_marginRight="10dp"
         android:layout_height="120dp"
         android:layout_alignParentBottom="true"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:layout_width="match_parent"
@@ -215,7 +216,8 @@
                 android:id="@+id/imageView5"
                 android:elevation="6dp"
                 android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_height="70dp"
+                android:visibility="gone"/>
         </LinearLayout>
 
         <android.support.design.widget.FloatingActionButton

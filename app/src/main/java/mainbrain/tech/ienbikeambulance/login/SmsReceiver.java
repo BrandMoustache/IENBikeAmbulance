@@ -32,10 +32,12 @@ public class SmsReceiver extends BroadcastReceiver {
             if (bundle != null) {
                 Object[] pdus = (Object[]) bundle.get("pdus");
                 msgs = new SmsMessage[pdus.length];
+                Log.e("message","msg");
 
                 //this msgs will have your message in array
 
                 for (int i = 0; i < msgs.length; i++) {
+                    Log.e("message","msg");
                     msgs[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
                     //str += "SMS from" + msgs[i].getOriginatingAddress();
                     //str += ":";
@@ -50,6 +52,7 @@ public class SmsReceiver extends BroadcastReceiver {
                 //if the msg contains the string IRN , then it is our otp message/
                 if (str.contains("IEN")) {
                     //if it the messaege
+                    Log.e("message","msg");
                     full_text_message = str;
                 }
             }

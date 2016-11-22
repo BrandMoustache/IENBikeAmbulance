@@ -62,7 +62,7 @@ public class ServiceRequest extends AppCompatActivity implements ServiceConnecti
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.servicerequest);
-        getActionBar().hide();
+        getSupportActionBar().hide();
         automaticBind();
 
         mResultReceiver = new AddressResultReceiver(new Handler());

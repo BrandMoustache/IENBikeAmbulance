@@ -59,7 +59,7 @@ public class Verification extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verification);
-        getActionBar().hide();
+        getSupportActionBar().hide();
         //did you check the SMSReceiver? no
         smsReceiver = new SmsReceiver();
 
@@ -100,15 +100,17 @@ public class Verification extends AppCompatActivity
     private void startTimer()
     {
         total = 0;
-
+        Log.e("handler","yes");
         final Handler handler = new Handler();
         final Runnable r = new Runnable()
         {
             public void run()
             {
                 total++;
+                Log.e("timer1","yes");
                 time.setText((60-total)+"s");
                 progress.setProgress(total);
+                Log.e("timer","yes");
 
                 //so , until the total gets to 60 , the handler will get called for every one sec IF
 
@@ -119,12 +121,13 @@ public class Verification extends AppCompatActivity
                 //but in the backgriund handler is still runnning
                 //and when the total reaches 60 ,
 
-                if(total==60)
+                if(total == 60)
                 {
                     //if couldn't get or read the message in 60 sec then we will go to this activity to enter the OTP manually
                     //after 60 secs checkOTP class will be called
 
                     //this will get run
+                    Log.e("intent","yes");
                     Intent intent = new Intent(Verification.this , CheckOTP.class);
                     intent.putExtra("number", getIntent().getStringExtra("number"));
                     intent.putExtra("code", getIntent().getStringExtra("code"));
@@ -137,18 +140,25 @@ public class Verification extends AppCompatActivity
                     try
                     {
                         //so each sec we are checking that method ,
+                        //messsage received - Done
                         String message = smsReceiver.getMessage();
                         //
 
                         //whether it contains our OTP or not
                         //if the OTP not received
+                        //does it contains the same code? - DOne
                         if(message.contains(getIntent().getStringExtra("code")) && callHandler)
                         {
                             //get number from the intent
                             //if the message contains our OTP then we need to ckech whether the user registerd with us or not
+                            //is net online - Done
                             if(CheckConnection.isOnline(getApplicationContext())) {
                                 //so calling a async task to connect eith server and we passing the number
+                                //is this line gets execute?
+
+                                //So defnitely this will get execute - DOne
                                 new checkAmbulance().execute(getIntent().getStringExtra("number"));
+                                Log.e("chkamb","yes");
                             }
                             else {
                                 Toast.makeText(getApplicationContext(), "No internet connection", Toast.LENGTH_SHORT).show();
@@ -187,7 +197,7 @@ public class Verification extends AppCompatActivity
             //processing is set as the message
 
             //it is used mostly for background processes to show users that somthing runnning behind and please wait
-
+//is progress showing?  -done - so there is no error till this point
             progressDialog = new ProgressDialog(Verification.this, AlertDialog.THEME_HOLO_LIGHT);
             progressDialog.setMessage("processing");
             progressDialog.show();
@@ -198,7 +208,7 @@ public class Verification extends AppCompatActivity
 
             try {
                 HttpClient http_client = new DefaultHttpClient();
-                HttpPost http_post = new HttpPost(Cons.port+"services/checkFire");
+                HttpPost http_post = new HttpPost(Cons.port+"services/checkBike");
 //                HttpPost http_post = new HttpPost("http://139.59.24.15/ien/checkAmbulance.php");
                 List<NameValuePair> nameVP = new ArrayList<NameValuePair>(2);
                 nameVP.add(new BasicNameValuePair("number", params[0]));
@@ -207,10 +217,14 @@ public class Verification extends AppCompatActivity
                 if (entity != null) {
                     //after sending number to server , server response you which is
                     String response = EntityUtils.toString(entity);
+                    //since this line is excuted that means there is no problm with server and you received the
+                    //id that you want
+                    //so till now the  app works fine - till this line
                     Log.e("test", response + "michael");
                     entity.consumeContent();
                     http_client.getConnectionManager().shutdown();
 
+                    //which is the response from the server which is the bike id
                     results = response;
                     //and we passing that response to onPosetExecute
                 } else {
@@ -220,6 +234,7 @@ public class Verification extends AppCompatActivity
                 results = e.toString();
                 Log.e("server", results);
             }
+            //and we returning the result
             return results;
         }
 
@@ -228,10 +243,13 @@ public class Verification extends AppCompatActivity
         {
             //now the variable result contains the response from the server
 
+            //the return value is now the result
             progressDialog.cancel();
             //if cancel is pressed then not registered message is displayed?
 
             //if the response is 0 , then it means there is no user registerd with this number
+            //so now the conditon
+            //is the result variable is 0? No.- so conditon false
             if (result.equals("0"))
             {
                 //so we are shoing a dialo to register first
@@ -251,7 +269,10 @@ public class Verification extends AppCompatActivity
             }
             // the fir_id_ is retrieved from the result and the phone number and id are committed meaning made permanent
             //if the respinse is not 0 and contains fir_id_ , then it is registerd in the server
-            else if(result.contains("fir_id_"))
+            //now next conditon , is it contains fir_id? still no. so again false
+            //so you can easily find that since we receiving the id of bike which never contains fir_id the problm with thi line
+            //so we changed it.........
+            else if(result.contains("bik_id_"))
             {
                 //so we making loogedin as true
                 App.editor.putBoolean("loggedin", true).commit();
@@ -266,7 +287,9 @@ public class Verification extends AppCompatActivity
             }
             else
             {
-
+                    //so atlast the code comes here.
+                //this is where the code stops// STOPSHIP: 21-11-2016
+                //since you dont have any code here , the app stops working.. whcih u mentioned as stucks.
             }
         }
     }

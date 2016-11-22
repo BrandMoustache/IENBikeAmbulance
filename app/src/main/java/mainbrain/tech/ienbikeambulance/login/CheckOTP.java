@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -39,7 +40,7 @@ import mainbrain.tech.ienbikeambulance.main.Home;
 /**
  * Created by iammike on 16/07/16.
  */
-public class CheckOTP extends Activity
+public class CheckOTP extends AppCompatActivity
 {
     private CustomProgressDialog progressDialog;
     TextView txtv1,txtv2,txtv3,txtv4,txtv5,changenum;
@@ -53,8 +54,8 @@ public class CheckOTP extends Activity
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        getActionBar().hide();
         setContentView(R.layout.checkotp);
+        getSupportActionBar().hide();
 
 
         new Sansation().overrideFonts(getApplicationContext() , findViewById(R.id.layout));
